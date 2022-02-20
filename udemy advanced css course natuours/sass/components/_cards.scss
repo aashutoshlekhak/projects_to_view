@@ -1,0 +1,237 @@
+.card {
+    //functionality
+    perspective: 150rem;
+    -moz-prespective: 150rem; //to make it work with mozilla firefox 
+    position: relative;
+    height: 53px;
+
+
+    &_side {
+        background-color: orangered;
+        color: #fff;
+        transition: all .5s ease;
+        height: 53rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden; //this hides the backpart of the card so when we rotate it the card at the front will show its back part and as soon it shows the back part it will hide itself and the back card will be shown
+        //we used backface-visibility instead of z-index in this case.
+        border-radius: 5px;
+        overflow: hidden; //without this the child image is overflowing the card and thus this border radius will not be seen in the image
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+
+
+        &--front {
+            background-color: white;
+        }
+
+        &--back {
+            background: green;
+            transform: rotateY(180deg); //back side is already rotated before we hover over the card 
+
+            &-1 {
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+            }
+
+            &-2 {
+                background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+            }
+
+            &-3 {
+                background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+            }
+
+        }
+
+
+
+
+
+    }
+
+    &:hover &_side--front {
+        //when we hover the tcard we want  the side to transform
+        transform: rotateY(-180deg);
+
+    }
+
+    &:hover &_side--back {
+        //when we hover the tcard we want  the side to transform
+        transform: rotateY(0);
+
+    }
+
+    //front side styling
+
+    &_picture {
+        background-size: cover;
+        height: 23rem;
+        background-blend-mode: screen; //we didn't specify the opacity in the gradient background, however this replaces the need of opacitym previously this wa just possible in photoshop, we would have to do it in photoshop first and then use the image in css. it is still not available in browsers like internet explorer
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); //webkit to make is accessible in all browsers because it is new css property and may not be accessible in other browsers--this is prefixed
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); //this is official 
+
+        &--1 {
+            background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/nat-5.jpg); //we used .. (one level up)because thsi will be written in the css folder and image is one level up from the css folder
+        }
+
+        &--2 {
+            background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(../img/nat-6.jpg); //we used .. (one level up)because thsi will be written in the css folder and image is one level up from the css folder
+        }
+
+        &--3 {
+            background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url(../img/nat-7.jpg); //we used .. (one level up)because thsi will be written in the css folder and image is one level up from the css folder
+        }
+    }
+
+    &_heading {
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: $color-white;
+        text-transform: uppercase;
+        position: absolute;
+        text-align: right;
+        top: 12rem;
+        right: 2rem;
+        width: 60%; //to make the heading text in two different line
+    }
+
+    &_heading-span {
+        padding: 1rem 1.5rem;
+        -webkit-box-decoration-break: clone; //because google chrome right now don't have box decoration-break: clone property
+        box-decoration-break: clone;
+
+        &--1 {
+            background-image: linear-gradient(to right bottom, rgba($color-secondary-light, .85), rgba($color-secondary-dark, .85))
+        }
+
+        &--2 {
+            background-image: linear-gradient(to right bottom, rgba($color-primary-light, .85), rgba($color-primary-dark, .85))
+        }
+
+        &--3 {
+            background-image: linear-gradient(to right bottom, rgba($color-tertiary-light, .85), rgba($color-tertiary-dark, .85))
+        }
+    }
+
+    &_details {
+        padding: 3rem;
+
+        ul {
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+
+
+            li {
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 1rem;
+                color: gray;
+                text-transform: uppercase;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid $color-grey-light-2;
+                }
+            }
+
+
+        }
+    }
+
+    //back side styling
+
+    &_cta {
+        position: absolute;
+        width: 90%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+    }
+
+    &_price-box {
+        text-align: center;
+        margin-bottom: 8rem;
+        color: white;
+
+    }
+
+    &_price-only {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+
+    &_price-value {
+        font-size: 6rem;
+        font-weight: 100;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//old code
+
+// .card {
+//     perspective: 150rem;
+//     -moz-prespective: 150rem; //to make it work with mozilla firefox 
+//     // position: relative; //to make the front and back child card on the top of one antoher 
+//     height: 50rem; //to bring back the perspective because heighty collapse when we use absolute position
+
+//     &_side {
+//         background-color: orangered;
+//         color: #fff;
+//         height: 50rem;
+//         transition: all 1s ease;
+//         //position: absolute; //to make the front and back child(fornt and back) on top of one another 
+//         top: 0;
+//         left: 0;
+//         width: 100%; //without this the elements will fit to their width
+//         backface-visibility: hidden; //it hides the back part of the card
+
+//         &--front {
+//             background-color: $color-white;
+//         }
+
+//         &--back {
+//             background: green;
+//             transform: rotateY(180deg); //back side is already rotated before we hover over the card 
+//         }
+
+
+
+
+//         &:hover &_side--front {
+//             //when we hover the tcard we want  the side to transform
+//             transform: rotateY(180deg);
+
+//         }
+
+//         &:hover &_side--back {
+//             //when we hover the tcard we want  the side to transform
+//             transform: rotateY(0);
+
+//         }
+//     }
+
+// }

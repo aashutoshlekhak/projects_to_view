@@ -1,0 +1,22 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    /* box-sizing: border-box; we put this taga from * to body element just because this is slightly considered a better practice also *::after and before are also selected by the universal selector */
+}
+
+
+html {
+
+    //this defines what 1 rem is 
+    font-size: 63%;
+    /* rem is with respect to root font size and root font size is specified in the html 10 is used because by default it is 16 and 10 will make calculation easier */
+}
+
+
+body {
+
+    box-sizing: border-box;
+}

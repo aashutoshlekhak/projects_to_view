@@ -1,0 +1,54 @@
+@keyframes moveInLeft {
+
+    0% {
+        opacity: 0;
+        transform: translate(-10rem);
+    }
+
+    50% {
+        transform: translateX(2rem);
+    }
+
+    100% {
+        transform: translate(0);
+
+        opacity: 1;
+    }
+}
+
+@keyframes moveInRight {
+    /* keyframes are used to create animation
+    at time 0% keyframe property is this at time 100 this
+    transform: translate( 10rem, 20rem) will set the initial possition at time 0 towards 10rem right and 20rem down
+    */
+
+    0% {
+        opacity: 0;
+        transform: translate(10rem);
+
+    }
+
+    50% {
+        transform: translateX(-2rem);
+    }
+
+    100% {
+        transform: translate(0);
+
+        opacity: 1;
+    }
+
+    /* there are other transform property like rorate(120deg) */
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}

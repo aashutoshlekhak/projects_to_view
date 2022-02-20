@@ -1,0 +1,466 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300&display=swap");
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-10rem); }
+  50% {
+    transform: translateX(2rem); }
+  100% {
+    transform: translate(0);
+    opacity: 1; } }
+
+@keyframes moveInRight {
+  /* keyframes are used to create animation
+    at time 0% keyframe property is this at time 100 this
+    transform: translate( 10rem, 20rem) will set the initial possition at time 0 towards 10rem right and 20rem down
+    */
+  0% {
+    opacity: 0;
+    transform: translate(10rem); }
+  50% {
+    transform: translateX(-2rem); }
+  100% {
+    transform: translate(0);
+    opacity: 1; }
+  /* there are other transform property like rorate(120deg) */ }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /* box-sizing: border-box; we put this taga from * to body element just because this is slightly considered a better practice also *::after and before are also selected by the universal selector */ }
+
+html {
+  font-size: 63%;
+  /* rem is with respect to root font size and root font size is specified in the html 10 is used because by default it is 16 and 10 will make calculation easier */ }
+
+body {
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  width: 100%; }
+  .heading-primary--main {
+    margin: 0 auto;
+    width: 95%;
+    padding: 0px;
+    display: block;
+    font-weight: 6rem;
+    letter-spacing: 4.5rem;
+    font-weight: 800;
+    animation-name: moveInLeft;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    /* animation attribute is used to apply the custom animation created using @keyframe */ }
+  .heading-primary--sub {
+    margin: 0 auto;
+    padding: 0px;
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 1.1rem;
+    animation: moveInRight 1.5s ease-out;
+    margin-bottom: 2rem;
+    /* margin-bottom to set the margin between sub heading and button */ }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  transition: all .2s; }
+  .heading-secondary:hover {
+    transform: skew(2deg, 8deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(40, 180, 133, 0.3); }
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #777;
+  text-transform: uppercase; }
+
+.paragraph:not(:last-child) {
+  margin-bottom: 3rem; }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-big {
+  margin-bottom: 7rem; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem; }
+
+.u-margin-top-big {
+  margin-top: 60rem; }
+
+.btn {
+  /* :active is clicked state also use the active class after the hover class */ }
+  .btn:link, .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    /* text decoration setus of dotted or line under the link */
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    /* will make the inline element as block */
+    border-radius: 10rem;
+    transition: all .2s;
+    /* simple transition to make the elements clicking smooth while going up and down */
+    position: relative;
+    /* this is to make the btn::active element absolute property work  */
+    font-size: 1.6rem; }
+  .btn:hover {
+    transform: translateY(-0.3rem);
+    /* creating shadow */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+    /* first is x direction second is y third is blur property and fourth is color */ }
+    .btn:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      /* scale increases size */
+      opacity: 0; }
+  .btn:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
+    background-color: #fff;
+    color: #777; }
+    .btn--white::after {
+      background-color: #fff; }
+  .btn--green {
+    background-color: #55c57a;
+    color: #fff;
+    display: block;
+    position: relative; }
+    .btn--green::after {
+      background-color: #fff; }
+  .btn::after {
+    content: "";
+    display: inline-block;
+    /* content and display are compulsory parameters that needs to be specified  */
+    height: 100%;
+    width: 100%;
+    /* height and width 100% means that it is 100% of the previous btn element */
+    border-radius: 10rem;
+    position: absolute;
+    /* this position absolute will search for the nearest parent relative element */
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+    /* transition property used to make the btnhover::after element smooth */ }
+  .btn--animated {
+    animation: moveInBottom .7s ease-out .75s;
+    animation-fill-mode: backwards;
+    /*last one after ease-out is animation delay we created different class becaues we will use btn class in other button as well  
+        and animation fill mode backwards will set the opacity 0 and tranform property from the 0% of the movein bottom*/ }
+
+.btn-text:link, .btn-text:visited {
+  font-size: 1.6rem;
+  color: #55c57a;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #55c57a;
+  transition: all .3s; }
+
+.btn-text:hover {
+  background-color: #55c57a;
+  color: #fff;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px); }
+
+.btn-text:active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  transform: translateY(0); }
+
+.composition {
+  position: relative; }
+  .composition_photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    position: absolute;
+    border-radius: 2px;
+    z-index: 10;
+    transition: all .2s;
+    outline-offset: 1.5rem; }
+    .composition_photo--p1 {
+      left: 0;
+      top: -2rem; }
+    .composition_photo--p2 {
+      right: 1rem;
+      top: 3rem; }
+    .composition_photo--p3 {
+      left: 20%;
+      top: 10rem; }
+    .composition_photo:hover {
+      outline: 1.5rem solid #55c57a;
+      transform: scale(1.1) translateY(-2px);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      z-index: 20; }
+  .composition:hover .composition_photo:not(:hover) {
+    transform: scale(0.9); }
+
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: all .3s; }
+  .feature-box_icon {
+    font-size: 6rem;
+    margin-bottom: 1.5rem;
+    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block; }
+  .feature-box:hover {
+    transform: translateY(-2rem) scale(1.05); }
+
+.card {
+  perspective: 150rem;
+  -moz-prespective: 150rem;
+  position: relative;
+  height: 53px; }
+  .card_side {
+    background-color: orangered;
+    color: #fff;
+    transition: all .5s ease;
+    height: 53rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    .card_side--front {
+      background-color: white; }
+    .card_side--back {
+      background: green;
+      transform: rotateY(180deg); }
+      .card_side--back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+      .card_side--back-2 {
+        background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+      .card_side--back-3 {
+        background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+  .card:hover .card_side--front {
+    transform: rotateY(-180deg); }
+  .card:hover .card_side--back {
+    transform: rotateY(0); }
+  .card_picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+    .card_picture--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg); }
+    .card_picture--2 {
+      background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/nat-6.jpg); }
+    .card_picture--3 {
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7.jpg); }
+  .card_heading {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    position: absolute;
+    text-align: right;
+    top: 12rem;
+    right: 2rem;
+    width: 60%; }
+  .card_heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; }
+    .card_heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+    .card_heading-span--2 {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
+    .card_heading-span--3 {
+      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
+  .card_details {
+    padding: 3rem; }
+    .card_details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; }
+      .card_details ul li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+        color: gray;
+        text-transform: uppercase; }
+        .card_details ul li:not(:last-child) {
+          border-bottom: 1px solid #eee; }
+  .card_cta {
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+  .card_price-box {
+    text-align: center;
+    margin-bottom: 8rem;
+    color: white; }
+  .card_price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase; }
+  .card_price-value {
+    font-size: 6rem;
+    font-weight: 100; }
+
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  transform: skewX(-12deg); }
+  .story > * {
+    transform: skewX(12deg); }
+  .story_shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative; }
+  .story_img {
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    backface-visibility: hidden;
+    transition: all .5s; }
+  .story_caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+    backface-visibility: hidden; }
+  .story:hover .story_caption {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+  .story:hover .story_img {
+    transform: translateX(-4rem) scale(1.1);
+    filter: blur(3px) brightness(80%); }
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.7), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  position: relative;
+  /* position of the parent should be specified as relative to use the child prositon as absolute */ }
+  .header__logo-box {
+    /*using nesting*/
+    position: absolute;
+    /* positon of the child should be specified as absolute to move it with respect to the parent */
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__logo:hover {
+    animation-name: moveInLeft;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
+.row {
+  width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 7rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 7rem)/2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2*7rem)/3); }
+  .row .col-2-of-3 {
+    width: calc(((100% - 2*7rem)/3) * 2 + 7rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3*7rem)/4); }
+  .row .col-3-of-4 {
+    width: calc(((100% - 3*7rem)/4) * 3 + 2 * 7rem); }
+  .row .col-2-of-4 {
+    width: calc((100% - 3*7rem)/2 + 7rem); }
+
+.section-about {
+  background-color: #f7f7f7;
+  height: fit-content;
+  padding: 25rem 0;
+  margin-top: -20vh; }
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.7), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
+  background-size: cover;
+  background-position: center;
+  transform: skewY(-6deg);
+  margin-top: -11rem; }
+  .section-features > * {
+    transform: skewY(6deg); }
+
+.section-tours {
+  background-color: #f7f7f7;
+  height: fit-content;
+  padding: 25rem 0 10rem 0;
+  margin-top: -20vh; }
+
+.section-stories {
+  padding: 15rem 0;
+  background-color: #f7f7f7; }

@@ -1,0 +1,125 @@
+.btn {
+
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        /* text decoration setus of dotted or line under the link */
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        /* will make the inline element as block */
+
+        border-radius: 10rem;
+        transition: all .2s;
+        /* simple transition to make the elements clicking smooth while going up and down */
+        position: relative;
+        /* this is to make the btn::active element absolute property work  */
+        font-size: $default-font-size;
+        ;
+
+    }
+
+
+
+    &:hover {
+        transform: translateY(-.3rem);
+        /* creating shadow */
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+
+        /* first is x direction second is y third is blur property and fourth is color */
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            /* scale increases size */
+            opacity: 0;
+
+        }
+    }
+
+    /* :active is clicked state also use the active class after the hover class */
+    &:active {
+        transform: translateY(-.1rem);
+        box-shadow: 0 .5rem .5rem rgba($color-black, 0.2);
+    }
+
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+
+
+        &::after {
+            background-color: $color-white;
+
+        }
+    }
+
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+        display: block;
+        position: relative;
+
+        &::after {
+            background-color: $color-white;
+
+        }
+    }
+
+    &::after {
+
+        content: "";
+        display: inline-block;
+        /* content and display are compulsory parameters that needs to be specified  */
+        height: 100%;
+        width: 100%;
+        /* height and width 100% means that it is 100% of the previous btn element */
+        border-radius: 10rem;
+        position: absolute;
+        /* this position absolute will search for the nearest parent relative element */
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+        /* transition property used to make the btnhover::after element smooth */
+    }
+
+
+
+
+
+    &--animated {
+
+
+        animation: moveInBottom .7s ease-out .75s;
+        animation-fill-mode: backwards;
+        /*last one after ease-out is animation delay we created different class becaues we will use btn class in other button as well  
+        and animation fill mode backwards will set the opacity 0 and tranform property from the 0% of the movein bottom*/
+    }
+}
+
+.btn-text {
+
+    &:link,
+    &:visited {
+        font-size: $default-font-size;
+        color: $color-primary;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary;
+        transition: all .3s;
+
+    }
+
+    &:hover {
+
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+        transform: translateY((-2px));
+    }
+
+    &:active {
+        box-shadow: 0 .5rem 1rem rgba($color-black, 0.2);
+        transform: translateY((0));
+    }
+
+}

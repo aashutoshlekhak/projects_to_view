@@ -1,0 +1,73 @@
+.story {
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($color-black, $alpha: .1);
+    border-radius: 3px;
+    padding: 6rem;
+    padding-left: 9rem;
+    font-size: $default-font-size;
+    transform: skewX(-12deg);
+    //to make the story section skewed but this has skewed the child as well
+
+    &>* {
+        transform: skewX(12deg);
+        //this will take back the skew -12 deg in all the direct child element of .story on which the story transform has skewed by 12 deg...but this will still skew the image shape inside it, because the native transform property used in the image will override this generic selector
+    }
+
+    &_shape {
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        //webkit because it still doesnot work in other browsers and to use this property the element should must have width height, and float property
+        shape-outside: circle(50% at 50% 50%);
+        //shape outside defines where the content flows around the element
+        //this will make text wrap around as a circle
+        clip-path: circle(50% at 50% 50%);
+        //clippath to make this whole seciton circular in looks as well
+        transform: translateX(-3rem) skewX(12deg);
+        position: relative;
+        //to make the capiton element absolute
+    }
+
+    &_img {
+        //width: 100%;
+        //this will give the image width 100% of the parent that is width 15rem and height 15 rem
+        height: 100%;
+        //we used height property here because the widthe was bigger than the height in thsi image
+        transform: translateX(-4rem) scale(1.4);
+        //to make the lady on the image exactly at the center..the image was initially pushed towards right 
+        backface-visibility: hidden;
+        transition: all .5s;
+    }
+
+    &_caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        //because the image with consider the center length form the initial letter of the word not the center of the word
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0;
+        transition: all .5s;
+        backface-visibility: hidden;
+        //to hide the initial shakiness of the text when the animation happens 
+    }
+
+    &:hover &_caption {
+        //because as soon as the story is hovered we want to change the caption
+        opacity: 1;
+        transform: translate(-50%, -50%);
+        //to bring the text caption to the center of the image when hovered 
+    }
+
+    &:hover &_img {
+        transform: translateX(-4rem) scale(1.1);
+        filter: blur(3px) brightness(80%);
+        //to blur the image and the brightness value above 80% makes it lighter and below 100% makes it darker 
+
+    }
+}

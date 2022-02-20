@@ -1,0 +1,356 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="font css/styles.css" />
+    <link rel="shortcut icon" href="img/nature.png" />
+    <title>Natours | exciting tours for adventurous people</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__logo-box">
+        <img src="img/logo-white.png" alt="logo" class="header__logo" />
+      </div>
+      <div class="header__text-box">
+        <h1 class="heading-primary">
+          <span class="heading-primary--main">OUTDOORS </span>
+          <span class="heading-primary--sub"> IS WHERE LIFE HAPPENS</span>
+        </h1>
+        <a href="#" class="btn btn--white btn--animated">Discover our tours</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-about">
+        <div class="u-center-text u-margin-bottom-big">
+          <!-- To create the utility classes center and margin bottom to use it more than once and margin bottm was not defined in the h2 file directly because the same heading in defined in multiple places and different heading is used in all those places  -->
+          <h2 class="heading-secondary u-margin-bottom-small">
+            Exciting tours for adventurous people
+          </h2>
+        </div>
+        <div class="row">
+          <div class="col-1-of-2">
+            <h3 class="heading-tertiary u-margin-bottom-small">
+              You're going to fall in love with nature
+            </h3>
+            <p class="paragraph">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione,
+              hic esse dignissimos magni eius, distinctio soluta delectus
+              temporibus animi nisi sit laudantium ea voluptas ex inventore
+              quaerat reprehenderit voluptatibus nam.
+            </p>
+
+            <h3 class="heading-tertiary u-margin-bottom-small">
+              Live adventures like you never have before
+            </h3>
+            <p class="paragraph">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione,
+              hic esse dignissimos magni eius, distinctio soluta delectus
+            </p>
+
+            <a href="#" class="btn-text">Learn more &rarr;</a>
+          </div>
+          <div class="col-1-of-2">
+            <!-- emmet trick .composition>(img.composition_photo.compositon_photo--p1 this will create everything that's downward)*3 -->
+            <div class="composition">
+              <img
+                src="img/nat-1-large.jpg"
+                alt="photo 1"
+                class="composition_photo composition_photo--p1"
+              /><img
+                src="img/nat-2-large.jpg"
+                alt="photo 2"
+                class="composition_photo composition_photo--p2"
+              /><img
+                src="img/nat-3-large.jpg"
+                alt="photo 3"
+                class="composition_photo composition_photo--p3"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-features">
+        <!-- <i class="icon-basic-world"></i> -->
+        <!-- these fonts were downloaded from linear.io adn to use them follow following instructions 
+        1. download icos from linear.io
+      copy fonts and css file to the main project folder
+      3. link that css file 
+      check the reference for which icon to use in the download folder
+      use i calss element to use the icon. i does not actually stands for icon rather it stands for italic but we no longer use that element -->
+
+        <div class="row">
+          <div class="col-1-of-4">
+            <div class="feature-box">
+              <i class="feature-box_icon icon-basic-world"> </i>
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                Explore the world
+              </h3>
+              <p class="feature-box_text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id
+                rerum dolore vitae tempore minima
+              </p>
+            </div>
+          </div>
+
+          <div class="col-1-of-4">
+            <div class="feature-box">
+              <i class="feature-box_icon icon-basic-compass"> </i>
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                Meet Nature
+              </h3>
+              <p class="feature-box_text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id
+                rerum dolore vitae tempore minima
+              </p>
+            </div>
+          </div>
+
+          <div class="col-1-of-4">
+            <div class="feature-box">
+              <i class="feature-box_icon icon-basic-map"> </i>
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                Find your way
+              </h3>
+              <p class="feature-box_text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id
+                rerum dolore vitae tempore minima
+              </p>
+            </div>
+          </div>
+
+          <div class="col-1-of-4">
+            <div class="feature-box">
+              <i class="feature-box_icon icon-basic-heart"> </i>
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                live a healthier life
+              </h3>
+              <p class="feature-box_text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id
+                rerum dolore vitae tempore minima
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-tours">
+        <div class="u-center-text u-margin-bottom-big">
+          <h2 class="heading-secondary u-margin-bottom-small">
+            Most popular tours
+          </h2>
+        </div>
+        <div class="row">
+          <div class="col-1-of-3">
+            <div class="card">
+              <div class="card_side card_side--front">
+                <div class="card_picture card_picture--1">&nbsp;</div>
+                <!-- &nbsp; is the html special symbol for space -->
+                <h4 class="card_heading">
+                  <span class="card_heading-span card_heading-span--1"
+                    >The sea explorer
+                  </span>
+                </h4>
+                <div class="card_details">
+                  <ul>
+                    <li>3 days tours</li>
+                    <li>up to 30 people</li>
+                    <li>2 tour guides</li>
+                    <li>sleep in cozy hotes</li>
+                    <li>Difficulty: easy</li>
+                  </ul>
+                </div>
+                details
+              </div>
+
+              <div class="card_side card_side--back card_side--back-1">
+                <div class="card_cta">
+                  <!-- cta means call to action -->
+                  <div class="card_price-box">
+                    <p class="card_price-only">Only</p>
+                    <p class="card_price-value">$297</p>
+                  </div>
+                  <a href="#" class="btn btn--white">Book Now!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-1-of-3">
+            <div class="card">
+              <div class="card_side card_side--front">
+                <div class="card_picture card_picture--2">&nbsp;</div>
+                <!-- &nbsp; is the html special symbol for space -->
+                <h4 class="card_heading">
+                  <span class="card_heading-span card_heading-span--2"
+                    >The Forest hiker
+                  </span>
+                </h4>
+                <div class="card_details">
+                  <ul>
+                    <li>7 days tours</li>
+                    <li>up to 40 people</li>
+                    <li>6 tour guides</li>
+                    <li>sleep in provided tents</li>
+                    <li>Difficulty: medium</li>
+                  </ul>
+                </div>
+                details
+              </div>
+
+              <div class="card_side card_side--back card_side--back-2">
+                <div class="card_cta">
+                  <!-- cta means call to action -->
+                  <div class="card_price-box">
+                    <p class="card_price-only">Only</p>
+                    <p class="card_price-value">$297</p>
+                  </div>
+                  <a href="#" class="btn btn--white">Book Now!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-1-of-3">
+            <div class="card">
+              <div class="card_side card_side--front">
+                <div class="card_picture card_picture--3">&nbsp;</div>
+                <!-- &nbsp; is the html special symbol for space -->
+                <h4 class="card_heading">
+                  <span class="card_heading-span card_heading-span--3"
+                    >the snow adventurer
+                  </span>
+                </h4>
+                <div class="card_details">
+                  <ul>
+                    <li>7 days tours</li>
+                    <li>up to 15 people</li>
+                    <li>3 tour guides</li>
+                    <li>sleep in provided tents</li>
+                    <li>Difficulty: hard</li>
+                  </ul>
+                </div>
+                details
+              </div>
+
+              <div class="card_side card_side--back card_side--back-3">
+                <div class="card_cta">
+                  <!-- cta means call to action -->
+                  <div class="card_price-box">
+                    <p class="card_price-only">Only</p>
+                    <p class="card_price-value">$297</p>
+                  </div>
+                  <a href="#" class="btn btn--white">Book Now!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="u-center-text u-margin-top-big">
+          <a href="#" class="btn btn--green">Discover all tours</a>
+        </div>
+      </section>
+      <!-- Stories Section -->
+      <section class="section-stories">
+        <div class="u-center-text u-margin-bottom-big">
+          <h2 class="heading-secondary u-margin-bottom-small">
+            We make people genuinely happy
+          </h2>
+        </div>
+
+        <div class="row">
+          <div class="story">
+            <figure class="story_shape">
+              <img
+                src="img/nat-8.jpg"
+                alt="Person on a tour"
+                class="story_img"
+              />
+              <figcaption class="story_caption">Mary Smith</figcaption>
+            </figure>
+            <div class="story_text">
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                I had the best time with my family
+              </h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Reprehenderit ullam obcaecati ipsam repudiandae, officiisLorem
+                ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
+                ullam obcaecati ipsam repudiandae, dipisicing elit.
+                Reprehenderit ullam obcaecati ipsam repudiandae,
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="story">
+            <figure class="story_shape">
+              <img
+                src="img/nat-9.jpg"
+                alt="Person on a tour"
+                class="story_img"
+              />
+              <figcaption class="story_caption">Jack Wilson</figcaption>
+            </figure>
+            <div class="story_text">
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                Wow, This was an amzing adventure
+              </h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Reprehenderit ullam obcaecati ipsam repudiandae, officiisLorem
+                ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
+                ullam obcaecati ipsam repudiandae, dipisicing elit.
+                Reprehenderit ullam obcaecati ipsam repudiandae,
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="u-center-text">
+          <a href="#" class="btn-text">Read all stories &rarr;</a>
+        </div>
+      </section>
+    </main>
+
+    <!--   
+    <section class="grid-test">
+      <div class="row">
+        <div class="col-1-of-2">This is Col 1 of 2</div>
+        <div class="col-1-of-2">This is Col 1 of 2</div>
+      </div>
+
+      <div class="row">
+        <div class="col-1-of-3">This is Col 1 of 3</div>
+        <div class="col-1-of-3">This is Col 1 of 3</div>
+        <div class="col-1-of-3">This is Col 1 of 3</div>
+      </div>
+
+      <div class="row">
+        <div class="col-1-of-3">This is Col 1 of 3</div>
+        <div class="col-2-of-3">This is Col 2 of 3</div>
+      </div>
+
+      <div class="row">
+        <div class="col-1-of-4">This is Col 1 of 4</div>
+        <div class="col-1-of-4">This is Col 1 of 4</div>
+        <div class="col-1-of-4">This is Col 1 of 4</div>
+        <div class="col-1-of-4">This is Col 1 of 4</div>
+      </div>
+
+      <div class="row">
+        <div class="col-1-of-4">This is Col 1 of 4</div>
+        <div class="col-1-of-4">This is Col 1 of 4</div>
+        <div class="col-2-of-4">This is Col 2 of 4</div>
+      </div>
+
+      <div class="row">
+        <div class="col-1-of-4">This is Col 1 of 4</div>
+        <div class="col-3-of-4">This is Col 3 of 4</div>
+      </div>
+    </section>-->
+
+    <script src="script.js"></script>
+  </body>
+</html>

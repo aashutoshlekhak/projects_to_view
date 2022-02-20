@@ -1,0 +1,48 @@
+.composition {
+    position: relative;
+
+    &_photo {
+        width: 55%;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .4); //here the first parameter displayment from x and is usually always zero and the third parameter is blur and fourth is color and the inside color is the opacity.
+        position: absolute;
+        border-radius: 2px;
+        z-index: 10;
+        transition: all .2s;
+        outline-offset: 1.5rem;
+
+        &--p1 {
+            left: 0;
+            top: -2rem;
+        }
+
+        &--p2 {
+            right: 1rem;
+            top: 3rem;
+        }
+
+        &--p3 {
+            left: 20%;
+            top: 10rem;
+        }
+
+        &:hover {
+            outline: 1.5rem solid $color-primary; //this is setting the border color to green
+            transform: scale(1.1) translateY(-2px);
+            box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
+            z-index: 20;
+
+        }
+
+
+
+
+    }
+
+    &:hover &_photo:not(:hover) {
+
+        transform: scale(0.9);
+
+    }
+
+    //composition:hover composition_photo:not(:hover) whent the composition is hovered it will select the compositon photo that is not hovered
+}
